@@ -10,7 +10,7 @@ import { Pacifico } from "next/font/google";
 const pacifico = Pacifico({ weight: ["400"], subsets: ["latin"] });
 
 function Third() {
-  const { current } = useStateContext();
+  const { current, name } = useStateContext();
   const star1 = useRef<HTMLButtonElement>(null);
   const star2 = useRef<HTMLButtonElement>(null);
   const star3 = useRef<HTMLButtonElement>(null);
@@ -41,7 +41,7 @@ function Third() {
         <TypeAnimation
           sequence={[
             1500,
-            "Happy birthday, someone ✨",
+            `Happy birthday, ${name} ✨`,
             () => {
               setSequenceDone({ ...sequenceDone, first: true });
             },
